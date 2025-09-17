@@ -1,0 +1,263 @@
+/* Basic page setup */
+body {
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #f9f7f4 0%, #f0ede7 100%);
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative;
+    color: #333333;
+    overflow-x: hidden;
+}
+
+/* Background animation - Angola-inspired Chevron Pattern with matching color */
+.animated-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Using a subtle darker beige pattern on light beige background */
+    background:
+        linear-gradient(135deg, rgba(139, 125, 107, 0.12) 25%, transparent 25%), /* Subtle diagonal lines */
+        linear-gradient(225deg, rgba(139, 125, 107, 0.12) 25%, transparent 25%),
+        linear-gradient(45deg, rgba(139, 125, 107, 0.12) 25%, transparent 25%),
+        linear-gradient(315deg, rgba(139, 125, 107, 0.12) 25%, transparent 25%);
+    background-size: 80px 80px; /* Adjust size to control pattern density */
+    background-position: 0 0;
+    animation: chevron-move 40s linear infinite; /* Animation for the chevron */
+    z-index: -1; /* Puts the background behind the content */
+}
+
+@keyframes chevron-move {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 80px 80px; /* Moves the pattern by its size */
+    }
+}
+
+
+/* Logos at the top, horizontally arranged */
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+    gap: 20px;
+    position: relative; /* Ensure it's above background */
+    z-index: 2;
+}
+
+.logos-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.logo {
+    height: auto;
+    transition: transform 0.3s ease;
+    border-radius: 8px;
+}
+
+.logo-secondary {
+    max-width: 150px;
+}
+
+.logo-main {
+    max-width: 200px;
+    filter: drop-shadow(0 4px 12px rgba(0, 230, 230, 0.3));
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+.logo-main:hover {
+    transform: scale(1.15);
+}
+
+.hero-image-container {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-image {
+    max-width: 600px;
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.hero-image:hover {
+    transform: translateY(-8px) scale(1.02);
+}
+
+.hero-text-container {
+    margin-top: 40px;
+    text-align: center;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-title {
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+    font-size: 3.2em;
+    font-weight: 800;
+    color: #ed0000;
+    margin: 0 0 20px 0;
+    letter-spacing: -0.5px;
+    line-height: 1.1;
+}
+
+.hero-subtitle {
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+    font-size: 1.3em;
+    font-weight: 400;
+    color: #555555;
+    margin: 0;
+    line-height: 1.5;
+    letter-spacing: 0.3px;
+}
+
+/* Content section layout (rest of your existing code) */
+.content-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 32px;
+    position: relative;
+    z-index: 1;
+    padding-bottom: 40px;
+}
+
+/* Card styling (rest of your existing code) */
+.card {
+    background: rgba(255,255,255,0.85);
+    border-radius: 18px;
+    box-shadow: 0 8px 32px 0 rgba(139, 125, 107, 0.25);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(139, 125, 107, 0.18);
+    overflow: hidden;
+    max-width: 340px;
+    width: 100%;
+    transition: transform 0.3s cubic-bezier(.25,.8,.25,1), box-shadow 0.3s cubic-bezier(.25,.8,.25,1);
+    text-decoration: none;
+    color: #333333;
+    animation: cardFadeIn 0.8s ease;
+    margin: 0 auto;
+}
+
+.card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 16px 32px rgba(139, 125, 107, 0.4);
+}
+
+.card h3 {
+    text-align: center;
+    padding: 18px 18px 0;
+    margin: 0;
+    font-size: 1.25em;
+    color: #000000;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: capitalize;
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+}
+
+.card-preview {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 0 0 18px 18px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+}
+
+/* Styling for Wistia videos (rest of your existing code) */
+.video-card wistia-player {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border: none;
+    border-radius: 0 0 18px 18px;
+}
+
+/* Responsiveness for phones (rest of your existing code) */
+@media (max-width: 600px) {
+    body {
+        padding: 8px;
+    }
+    .logo-secondary {
+        max-width: 90px;
+    }
+    .logo-main {
+        max-width: 120px;
+    }
+    .logos-wrapper {
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+    .hero-image {
+        max-width: 95vw;
+        margin-top: 20px;
+    }
+    .hero-image-container {
+        margin-top: 20px;
+    }
+    .hero-text-container {
+        margin-top: 25px;
+        padding: 0 15px;
+    }
+    .hero-title {
+        font-size: 2.2em;
+        letter-spacing: -0.3px;
+        margin-bottom: 15px;
+    }
+    .hero-subtitle {
+        font-size: 1.1em;
+        line-height: 1.4;
+    }
+    .content-container {
+        flex-direction: column;
+        gap: 18px;
+        padding-bottom: 20px;
+    }
+    .card {
+        max-width: 98vw;
+        min-width: 0;
+        margin: 0 auto;
+        padding: 0;
+    }
+    .card h3 {
+        font-size: 1em;
+        padding: 12px 8px 0;
+        color: #000000;
+        font-weight: 700;
+    }
+    .card-preview {
+        border-radius: 0 0 18px 18px;
+    }
+    .video-card wistia-player {
+        border-radius: 0 0 18px 18px;
+    }
+}
+@keyframes cardFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
