@@ -42,29 +42,39 @@ function changeLanguage(lang) {
         }
     });
     
-    // Update active language button
-    document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.classList.remove('active');
-    });
-    document.querySelector(`[data-lang="${lang}"]`).classList.add('active');
-    
     // Store language preference
     localStorage.setItem('preferredLanguage', lang);
     
     // Update html lang attribute
     document.documentElement.lang = lang;
+    
+    // Hide the popup
+    hideLanguagePopup();
+}
+
+// Function to show language popup
+function showLanguagePopup() {
+    const popup = document.getElementById('languagePopup');
+    if (popup) {
+        popup.classList.remove('hidden');
+    }
+}
+
+// Function to hide language popup
+function hideLanguagePopup() {
+    const popup = document.getElementById('languagePopup');
+    if (popup) {
+        popup.classList.add('hidden');
+    }
 }
 
 // Initialize language system
 function initLanguageSystem() {
-    // Check if user has a preferred language stored
-    const savedLanguage = localStorage.getItem('preferredLanguage');
-    if (savedLanguage && translations[savedLanguage]) {
-        changeLanguage(savedLanguage);
-    }
+    // Always show the popup on page load
+    showLanguagePopup();
     
-    // Add click listeners to language buttons
-    document.querySelectorAll('.lang-btn').forEach(button => {
+    // Add click listeners to language options
+    document.querySelectorAll('.lang-option').forEach(button => {
         button.addEventListener('click', (e) => {
             e.preventDefault();
             const lang = button.getAttribute('data-lang');

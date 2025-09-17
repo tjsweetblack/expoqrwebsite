@@ -38,55 +38,104 @@ body {
     }
 }
 
-/* Language Selector */
-.language-selector {
+/* Language Selection Popup */
+.language-popup {
     position: fixed;
-    top: 20px;
-    right: 20px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
     display: flex;
-    gap: 8px;
-    z-index: 1000;
-    background: rgba(255, 255, 255, 0.9);
-    padding: 8px;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(139, 125, 107, 0.2);
-    backdrop-filter: blur(10px);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    backdrop-filter: blur(5px);
 }
 
-.lang-btn {
+.language-popup.hidden {
+    display: none;
+}
+
+.popup-content {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+    animation: popupFadeIn 0.5s ease;
+}
+
+@keyframes popupFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8) translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.popup-title {
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+    font-size: 2.2em;
+    font-weight: 700;
+    color: #2c2c2c;
+    margin: 0 0 10px 0;
+    letter-spacing: -0.3px;
+}
+
+.popup-subtitle {
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+    font-size: 1.1em;
+    color: #666666;
+    margin: 0 0 30px 0;
+    font-weight: 400;
+}
+
+.language-options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.lang-option {
     display: flex;
     align-items: center;
-    gap: 6px;
-    padding: 8px 12px;
-    border: none;
-    background: transparent;
-    border-radius: 8px;
+    gap: 15px;
+    padding: 20px 25px;
+    border: 2px solid transparent;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 15px;
     cursor: pointer;
     transition: all 0.3s ease;
     font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
-    font-size: 0.9em;
+    font-size: 1.1em;
     font-weight: 500;
-    color: #666666;
-}
-
-.lang-btn:hover {
-    background: rgba(139, 125, 107, 0.1);
-    transform: translateY(-1px);
-}
-
-.lang-btn.active {
-    background: rgba(139, 125, 107, 0.15);
     color: #2c2c2c;
-    font-weight: 600;
+    width: 100%;
+    text-align: left;
 }
 
-.lang-btn .flag {
+.lang-option:hover {
+    background: rgba(139, 125, 107, 0.15);
+    border-color: rgba(139, 125, 107, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(139, 125, 107, 0.2);
+}
+
+.lang-option .flag {
+    font-size: 2em;
+    flex-shrink: 0;
+}
+
+.lang-option .lang-name {
     font-size: 1.2em;
-}
-
-.lang-btn .lang-text {
-    font-size: 0.85em;
-    white-space: nowrap;
+    font-weight: 600;
 }
 
 
@@ -248,20 +297,25 @@ body {
     body {
         padding: 8px;
     }
-    .language-selector {
-        top: 10px;
-        right: 10px;
-        padding: 6px;
-        gap: 4px;
+    .popup-content {
+        padding: 30px 25px;
+        max-width: 90%;
     }
-    .lang-btn {
-        padding: 6px 8px;
-        font-size: 0.8em;
+    .popup-title {
+        font-size: 1.8em;
     }
-    .lang-btn .lang-text {
-        display: none;
+    .popup-subtitle {
+        font-size: 1em;
+        margin-bottom: 25px;
     }
-    .lang-btn .flag {
+    .lang-option {
+        padding: 15px 20px;
+        font-size: 1em;
+    }
+    .lang-option .flag {
+        font-size: 1.5em;
+    }
+    .lang-option .lang-name {
         font-size: 1.1em;
     }
     .logo-secondary {
