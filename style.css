@@ -281,6 +281,10 @@ body {
     display: block;
     border-radius: 0 0 18px 18px;
     box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+    max-width: 100%;
+    object-fit: cover;
+    image-rendering: auto;
+    -webkit-image-smoothing: true;
 }
 
 /* Play Now Button Styling */
@@ -393,6 +397,15 @@ body {
     }
     .card-preview {
         border-radius: 0 0 18px 18px;
+        width: 100%;
+        height: auto;
+        display: block;
+        max-width: 100%;
+        object-fit: cover;
+        image-rendering: auto;
+        -webkit-image-smoothing: true;
+        min-height: 180px;
+        background-color: #f5f5f5;
     }
     .video-card wistia-player {
         border-radius: 0 0 18px 18px;
