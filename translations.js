@@ -5,24 +5,30 @@ const translations = {
         'hero-subtitle': 'Projects saving lives',
         'card1-title': "Tchissola's Dream comic book",
         'card2-title': 'MapaZZZ mobile app website',
+        'card2-quiz-title': 'MapaZZZ quiz game',
         'card3-title': "Tchissola's Dream full video",
-        'card4-title': 'MapaZZZ mobile app introduction video'
+        'card4-title': 'MapaZZZ mobile app introduction video',
+        'play-now-btn': 'Play Now'
     },
     pt: {
         'hero-title': 'Angola Expo 2025 Osaka',
         'hero-subtitle': 'Projetos salvando vidas',
         'card1-title': 'Livro de quadrinhos O Sonho de Tchissola',
         'card2-title': 'Site do aplicativo móvel MapaZZZ',
+        'card2-quiz-title': 'Jogo de quiz MapaZZZ',
         'card3-title': 'Vídeo completo O Sonho de Tchissola',
-        'card4-title': 'Vídeo de introdução do aplicativo móvel MapaZZZ'
+        'card4-title': 'Vídeo de introdução do aplicativo móvel MapaZZZ',
+        'play-now-btn': 'Jogar Agora'
     },
     ja: {
         'hero-title': 'アンゴラ万博2025大阪',
         'hero-subtitle': '命を救うプロジェクト',
         'card1-title': 'チッソラの夢コミックブック',
         'card2-title': 'MapaZZZモバイルアプリウェブサイト',
+        'card2-quiz-title': 'MapaZZZクイズゲーム',
         'card3-title': 'チッソラの夢フルビデオ',
-        'card4-title': 'MapaZZZモバイルアプリ紹介ビデオ'
+        'card4-title': 'MapaZZZモバイルアプリ紹介ビデオ',
+        'play-now-btn': '今すぐプレイ'
     }
 };
 

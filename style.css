@@ -283,6 +283,32 @@ body {
     box-shadow: 0 2px 12px rgba(0,0,0,0.15);
 }
 
+/* Play Now Button Styling */
+.play-now-btn {
+    display: block;
+    background-color: #ed0000;
+    color: white;
+    padding: 12px 24px;
+    margin: 16px;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+    font-size: 1.1em;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.play-now-btn:hover {
+    background-color: #c70000;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(237, 0, 0, 0.3);
+}
+
 /* Styling for Wistia videos (rest of your existing code) */
 .video-card wistia-player {
     width: 100%;
@@ -370,6 +396,11 @@ body {
     }
     .video-card wistia-player {
         border-radius: 0 0 18px 18px;
+    }
+    .play-now-btn {
+        margin: 12px;
+        padding: 10px 20px;
+        font-size: 1em;
     }
 }
 @keyframes cardFadeIn {
